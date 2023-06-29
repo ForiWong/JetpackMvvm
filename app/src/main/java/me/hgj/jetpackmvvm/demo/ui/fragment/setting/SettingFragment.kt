@@ -39,6 +39,7 @@ import me.hgj.jetpackmvvm.ext.navigateAction
  * 作者　: hegaojian
  * 时间　: 2020/3/9
  * 描述　: 系统设置
+ * todo extends PreferenceFragmentCompat 这个方式还是第一次看到
  */
 class SettingFragment : PreferenceFragmentCompat(),
     SharedPreferences.OnSharedPreferenceChangeListener {

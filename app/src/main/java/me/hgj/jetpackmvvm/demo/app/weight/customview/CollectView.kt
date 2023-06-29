@@ -15,6 +15,7 @@ import per.goweii.reveallayout.RevealLayout
 
 /**
  * @author CuiZhen
+ * todo 点赞红心控件
  */
 class CollectView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : RevealLayout(context, attrs, defStyleAttr), View.OnTouchListener {
 

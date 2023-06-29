@@ -99,6 +99,7 @@ class WebFragment : BaseFragment<WebViewModel, FragmentWebBinding>() {
                 }
             }
         }
+        //初始化AgentWeb
         preWeb = AgentWeb.with(this)
             .setAgentWebParent(webcontent, LinearLayout.LayoutParams(-1, -1))
             .useDefaultIndicator()
@@ -173,7 +174,7 @@ class WebFragment : BaseFragment<WebViewModel, FragmentWebBinding>() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.web_share -> {
-                //分享
+                //分享 这个系统自带的分享
                 startActivity(Intent.createChooser(Intent().apply {
                     action = Intent.ACTION_SEND
                     putExtra(Intent.EXTRA_TEXT, "{${mViewModel.showTitle}}:${mViewModel.url}")

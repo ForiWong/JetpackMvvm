@@ -26,6 +26,7 @@ val HttpRequestCoroutine: HttpRequestManger by lazy(mode = LazyThreadSafetyMode.
 class HttpRequestManger {
     /**
      * 获取首页文章数据
+     * todo 这种方法可以参考
      */
     suspend fun getHomeData(pageNo: Int): ApiResponse<ApiPagerResponse<ArrayList<AriticleResponse>>> {
         //同时异步请求2个接口，请求完成后合并数据

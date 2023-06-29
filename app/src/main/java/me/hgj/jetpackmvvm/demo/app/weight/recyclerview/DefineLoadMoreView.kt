@@ -19,6 +19,7 @@ import me.hgj.jetpackmvvm.demo.app.util.SettingUtil
 
 /**
  * 这是这个类的主角，如何自定义LoadMoreView。
+ * 列表底部加载更多view
  */
 class DefineLoadMoreView(context: Context) : LinearLayout(context), SwipeRecyclerView.LoadMoreView, View.OnClickListener {
 

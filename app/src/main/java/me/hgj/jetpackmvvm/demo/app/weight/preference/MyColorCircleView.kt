@@ -16,6 +16,7 @@ import com.afollestad.materialdialogs.utils.MDUtil.dimenPx
 /**
  * @Author:         hegaojian
  * @CreateDate:     2019/8/12 14:23
+ * 带颜色的圆
  */
 class MyColorCircleView(
         context: Context,

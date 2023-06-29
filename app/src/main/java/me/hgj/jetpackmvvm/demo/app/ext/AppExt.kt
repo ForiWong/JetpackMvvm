@@ -27,6 +27,7 @@ import java.io.IOException
  * @param negativeButtonText 取消按钮文字 默认空 不为空时显示该按钮
  * @param negativeAction 点击取消按钮触发的方法 默认空方法
  *
+ * todo 关于信息弹框、loading弹框的还是仔细看下
  */
 fun AppCompatActivity.showMessage(
     message: String,

@@ -21,6 +21,7 @@ import me.hgj.jetpackmvvm.demo.R
  *
  * Email: chjie.jaeger@gmail.com
  * GitHub: https://github.com/laobie
+ * 状态栏工具
  */
 object StatusBarUtil {
 

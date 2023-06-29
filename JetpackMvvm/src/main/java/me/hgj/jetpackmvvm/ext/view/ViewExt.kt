@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.view.View
 import android.widget.ImageView
+import me.hgj.jetpackmvvm.ext.util.logd
 import org.jetbrains.annotations.NotNull
 
 /**
@@ -101,10 +102,15 @@ fun createBitmapSafely(width: Int, height: Int, config: Bitmap.Config, retryCoun
  * @param action 执行方法
  */
 var lastClickTime = 0L
+/*
+ * todo @setOnClickListener @标签的使用
+ * return 返回到lambda函数处
+ */
 fun View.clickNoRepeat(interval: Long = 500, action: (view: View) -> Unit) {
     setOnClickListener {
         val currentTime = System.currentTimeMillis()
         if (lastClickTime != 0L && (currentTime - lastClickTime < interval)) {
+            "返回了".logd()
             return@setOnClickListener
         }
         lastClickTime = currentTime

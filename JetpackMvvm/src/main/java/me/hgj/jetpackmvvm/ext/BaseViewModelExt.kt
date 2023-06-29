@@ -18,6 +18,7 @@ import me.hgj.jetpackmvvm.state.paresResult
  * 作者　: hegaojian
  * 时间　: 2020/4/8
  * 描述　:BaseViewModel请求协程封装
+ * todo 这个可以！！参考关于网络请求、状态的管理
  */
 
 /**

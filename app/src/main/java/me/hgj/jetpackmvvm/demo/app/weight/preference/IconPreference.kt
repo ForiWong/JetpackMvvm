@@ -11,8 +11,8 @@ import me.hgj.jetpackmvvm.demo.app.util.SettingUtil
 /**
  * @Author:         hegaojian
  * @CreateDate:     2019/8/12 14:23
+ *  * 带icon的偏好view
  */
-
 class IconPreference(context: Context, attrs: AttributeSet) : Preference(context, attrs) {
 
     var circleImageView: MyColorCircleView? = null

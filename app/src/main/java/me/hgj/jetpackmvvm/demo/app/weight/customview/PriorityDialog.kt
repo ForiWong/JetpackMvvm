@@ -26,7 +26,7 @@ class PriorityDialog(context: Context, type: Int) : Dialog(context, R.style.Bott
         // 拿到Dialog的Window, 修改Window的属性
         val window = window
         window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-        window.decorView.setPadding(0, 0, 0, 0)
+        window.decorView.setPadding(0, 0, 0, 0)//decorView 装饰view有什么用
         // 获取Window的LayoutParams
         setCancelable(true)
         setCanceledOnTouchOutside(true)

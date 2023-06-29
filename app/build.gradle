@@ -16,7 +16,7 @@ android {
         versionCode 27
         versionName "1.2.7"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-      /* ndk {
+       /* ndk {
             // 设置支持的SO库架构
             abiFilters 'armeabi','armeabi-v7a'
         }*/
@@ -81,6 +81,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.android.support:multidex:1.0.3'
+    /*
+     * LeakCanary是一个开源的在debug版本中检测内存泄漏的java库
+     */
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
     //androidx UI
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -95,30 +98,72 @@ dependencies {
     implementation "com.afollestad.material-dialogs:color:3.3.0"
     implementation "com.afollestad.material-dialogs:datetime:3.3.0"
     implementation "com.afollestad.material-dialogs:bottomsheets:3.3.0"
-    //util
+    /**
+     * Android开发的工具库
+     * Android developers should collect the following utils(updating).
+     **/
     implementation 'com.blankj:utilcodex:1.26.0'
     //底部bottomBar
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
-    //RevealLayout
+    /**
+     * RevealLayout
+     * 可以指定2个子布局，以圆形揭示效果切换选中状态，比如点赞、收藏
+     */
     implementation 'com.github.goweii:RevealLayout:1.1.1'
-    //微信开源项目，替代SP
+    /*
+     * MMKV 是基于 mmap 内存映射的 key-value 组件，底层序列化/反序列化使用 protobuf 实现，性能高，稳定性强。
+     *
+     * 一个高效、小巧灵活的KV键值对存储框架，微信团队开发。
+     *
+     * An efficient, small mobile key-value storage framework developed by WeChat. Works on Android,
+     *  iOS, macOS, Windows, and POSIX.
+     *
+     * 高效：MMKV采用mmap保持内存与文件的同步，采用protobuf来序列化/反序列化值，在Android平台中达到最好的性能。
+     * Efficient. MMKV uses mmap to keep memory synced with files, and protobuf to encode/decode values,
+     *  making the most of Android to achieve the best performance.
+     *
+     * 多进程并发，支持同步读--读，读--写。
+     * Multi-Process concurrency: MMKV supports concurrent read-read and read-write access between processes.
+     *
+     * 容易使用
+     * Easy-to-use. You can use MMKV as you go. All changes are saved immediately, no sync, no apply calls needed.
+     *
+     * Small.
+     *
+     * A handful of files: MMKV contains process locks, encode/decode helpers and mmap logics, and nothing more. It's really tidy.
+     * About 50K in binary size: MMKV adds about 50K per architecture on App size, and much less when zipped (APK).
+     *
+     */
     implementation 'com.tencent:mmkv:1.0.22'
     //项目核心框架
     implementation project(path: ':JetpackMvvm')
 //    implementation 'me.hegj:JetpackMvvm:1.2.0'
-    //轮播图
+    /*
+    * An awesome banner view for Android，Based on ViewPager2. 这可能是全网最好用的ViewPager轮播图。
+    * 简单、高效，一行代码实现循环轮播，一屏三页任意变，指示器样式任你挑。
+    **/
     implementation 'com.github.zhpanvip:BannerViewPager:3.1.5'
     //BaseAdapter
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
-    //第三方recyclerview
+    /**
+     * 第三方recyclerview
+     */
     implementation 'com.yanzhenjie.recyclerview:x:1.3.2'
-    //管理界面状态库
+    /**
+     * 管理界面状态库: 空白、出错、加载中
+     */
     implementation 'com.kingja.loadsir:loadsir:1.3.8'
-    //指示器库
+    /**
+     * 指示器库
+     */
     implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
     //官方的
     implementation 'com.google.android:flexbox:2.0.1'
-    //加载webview
+    /**
+     * AgentWeb is a powerful library based on Android WebView.
+     * AgentWeb 是一个基于的 Android WebView ，极度容易使用以及功能强大的库，提供了 Android WebView 一系列的问题
+     * 解决方案 ，并且轻量和极度灵活，详细使用请参照上面的 Sample 。
+     **/
     implementation 'com.just.agentweb:agentweb:4.1.3'
     implementation 'com.just.agentweb:filechooser:4.1.3'
     implementation 'com.download.library:Downloader:4.1.3'
@@ -129,6 +174,11 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     //屏幕适配
     implementation 'me.jessyan:autosize:1.2.1'
-    //防崩溃
+    /*
+     * 防崩溃
+     * Android library that allows launching a custom activity when your app crashes, instead of showing
+     * the hated "Unfortunately, X has stopped" dialog.
+     * 当应用崩溃时启动一个自定义的活动页面，而不是一个讨厌的"不幸的，你的应用停止了"的弹窗。
+     */
     implementation 'cat.ereza:customactivityoncrash:2.3.0'
 }

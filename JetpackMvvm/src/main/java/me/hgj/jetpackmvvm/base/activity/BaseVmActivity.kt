@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.getVmClazz
+import me.hgj.jetpackmvvm.ext.util.logd
 import me.hgj.jetpackmvvm.ext.util.notNull
 import me.hgj.jetpackmvvm.network.manager.NetState
 import me.hgj.jetpackmvvm.network.manager.NetworkStateManager
@@ -18,19 +19,36 @@ import me.hgj.jetpackmvvm.network.manager.NetworkStateManager
  */
 abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
-    lateinit var mViewModel: VM
+    lateinit var mViewModel: VM//每个activity对应一个ViewModel,查看其class 描述
 
-    abstract fun layoutId(): Int
+    abstract fun layoutId(): Int//布局文件
 
-    abstract fun initView(savedInstanceState: Bundle?)
+    abstract fun initView(savedInstanceState: Bundle?)//初始化view，设置UI、点击事件
 
-    abstract fun showLoading(message: String = "请求网络中...")
+    abstract fun showLoading(message: String = "请求网络中...")//loading弹框
 
-    abstract fun dismissLoading()
+    abstract fun dismissLoading()//关闭弹框
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    /**
+     * savedInstanceState bundle
+     * 从上面的代码可以看出，onCreate方法的参数是一个Bundle类型的参数。Bundle类型的数据与Map类型的数据相似，都是以
+     * key-value的形式存储数据的。
+     *
+     * 从字面上看savedInstanceState，是保存实例状态的。实际上，savedInstanceState也就是保存Activity的状态的。
+     * 那么，savedInstanceState中的状态数据是从何处而来的呢？
+     *
+     *    public void onSaveInstanceState(Bundle savedInstanceState){
+     *      super.onSaveInstanceState(savedInsanceState);
+     *   }
+     *
+     * 在实际应用中，当一个Activity结束前，如果需要保存状态，就在onsaveInstanceState中，将状态数据以key-value的
+     * 形式放入到savedInstanceState中。这样，当一个Activity被创建时，就能从onCreate的参数savedInsanceState中
+     * 获得状态数据。
+     */
+    override fun onCreate(savedInstanceState: Bundle?) {//savedInstanceState 保存的实例状态
+        "onCreate ${javaClass.simpleName}".logd()
         super.onCreate(savedInstanceState)
-        initDataBind().notNull({
+        initDataBind().notNull({//内联函数
             setContentView(it)
         }, {
             setContentView(layoutId())
@@ -38,11 +56,36 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
         init(savedInstanceState)
     }
 
+    override fun onStart() {
+        "onStart ${javaClass.simpleName}".logd()
+        super.onStart()
+    }
+
+    override fun onResume() {
+        "onResume ${javaClass.simpleName}".logd()
+        super.onResume()
+    }
+
+    override fun onPause() {
+        "onPause ${javaClass.simpleName}".logd()
+        super.onPause()
+    }
+
+    override fun onStop() {
+        "onStop ${javaClass.simpleName}".logd()
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        "onDestroy ${javaClass.simpleName}".logd()
+        super.onDestroy()
+    }
+
     private fun init(savedInstanceState: Bundle?) {
-        mViewModel = createViewModel()
-        registerUiChange()
-        initView(savedInstanceState)
-        createObserver()
+        mViewModel = createViewModel()//创建viewModel
+        registerUiChange()//注册UI事件
+        initView(savedInstanceState)//初始化view，设置UI显示、点击事件
+        createObserver()//观察者
         NetworkStateManager.instance.mNetworkStateCallback.observeInActivity(this, Observer {
             onNetworkStateChanged(it)
         })
@@ -98,6 +141,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     /**
      * 供子类BaseVmDbActivity 初始化Databinding操作
+     * 创建dataBinding,并返回绑定的view
      */
     open fun initDataBind(): View? {
         return null

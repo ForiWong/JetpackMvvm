@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken
 import com.tencent.mmkv.MMKV
 import me.hgj.jetpackmvvm.demo.data.model.bean.UserInfo
 
+//采用的是MMKV
 object CacheUtil {
     /**
      * 获取保存的账户信息

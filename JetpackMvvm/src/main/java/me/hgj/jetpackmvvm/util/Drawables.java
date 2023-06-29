@@ -22,6 +22,9 @@ import static java.lang.annotation.ElementType.PARAMETER;
  * 作者　: hegaojian
  * 时间　: 2020/4/10
  * 描述　:使用DataBinding时可以使用该库 https://github.com/whataa/noDrawable
+ *
+ * Nodrawable是一个旨在减少99%的drawable.xml文件的库，可直接在布局文件中对任意View声明drawable属性。
+ *
  * 只需要复制核心类 ProxyDrawable，Drawables至项目中即可
  * 可以减少大量的drawable.xml文件
  */

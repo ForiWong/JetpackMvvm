@@ -20,6 +20,9 @@ import java.lang.reflect.InvocationTargetException
 import kotlin.math.roundToInt
 
 
+/**
+ * 获取各种设置：主题、颜色、动画等
+ */
 object SettingUtil {
 
     /**

@@ -15,6 +15,7 @@ import java.lang.reflect.ParameterizedType
  * 描述　:
  */
 
+//todo 通过泛型填充binding
 @JvmName("inflateWithGeneric")
 fun <VB : ViewBinding> AppCompatActivity.inflateBindingWithGeneric(layoutInflater: LayoutInflater): VB =
     withGenericBindingClass<VB>(this) { clazz ->

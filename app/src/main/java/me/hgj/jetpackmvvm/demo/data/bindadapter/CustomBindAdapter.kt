@@ -21,6 +21,7 @@ import me.hgj.jetpackmvvm.ext.view.textString
  * 作者　: hegaojian
  * 时间　: 2019/12/23
  * 描述　: 自定义 BindingAdapter
+ * 添加dataBinding的绑定属性
  */
 object CustomBindAdapter {
 

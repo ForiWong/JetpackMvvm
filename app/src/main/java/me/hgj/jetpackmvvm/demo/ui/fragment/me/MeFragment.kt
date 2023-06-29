@@ -86,7 +86,7 @@ class MeFragment : BaseFragment<MeViewModel, FragmentMeBinding>() {
 
         /** 登录 */
         fun login() {
-            nav().jumpByLogin {}
+            nav().jumpByLogin {}//todo nav()
         }
 
         /** 收藏 */

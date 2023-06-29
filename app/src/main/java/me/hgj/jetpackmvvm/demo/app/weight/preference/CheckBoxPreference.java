@@ -34,6 +34,9 @@ import androidx.core.content.res.TypedArrayUtils;
 import androidx.preference.PreferenceViewHolder;
 import androidx.preference.TwoStatePreference;
 
+/**
+ * 带复选框的偏好view
+ */
 @SuppressLint("RestrictedApi")
 public class CheckBoxPreference extends TwoStatePreference {
     private final Listener mListener = new Listener();
