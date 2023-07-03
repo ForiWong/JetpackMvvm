@@ -12,7 +12,7 @@ import me.hgj.jetpackmvvm.ext.inflateBindingWithGeneric
  * 作者　: hegaojian
  * 时间　: 2019/12/12
  * 描述　: ViewModelFragment基类，自动把ViewModel注入Fragment和Databind注入进来了
- * 需要使用Databind的清继承它
+ * 需要使用Databind的请继承它
  */
 abstract class BaseVmDbFragment<VM : BaseViewModel, DB : ViewDataBinding> : BaseVmFragment<VM>() {
 

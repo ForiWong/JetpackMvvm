@@ -80,6 +80,7 @@ abstract class BaseVmFragment<VM : BaseViewModel> : Fragment() {
 
     /**
      * 懒加载
+     * todo
      */
     abstract fun lazyLoadData()
 

@@ -16,6 +16,17 @@ import me.hgj.jetpackmvvm.network.manager.NetworkStateManager
  * 作者　: hegaojian
  * 时间　: 2019/12/12
  * 描述　: ViewModelActivity基类，把ViewModel注入进来了
+ *
+ViewBinding 与 DataBinding的区别
+目的不同。ViewBinding的出现仅仅是为了帮开发人员省去写findViewById的步骤；而DataBinding是用于绑定数据的，
+能够把视图的数据和代码变量绑定起来，并且实现自动更新。这个特性使得DataBinding能和MVVM框架进行很好的配合。
+
+初始化方式不同。ViewBinding通过生成的Binding类的inflate方法来加载布局，然后还需要用Activity的setContent
+View()方法来绑定。而Databinding则是通过DataBindingUtil.setContentView()来绑定的。
+
+包含关系。DataBinding也有ViewBinding的功能，也可以省去findViewById()方法。
+public abstract class ViewDataBinding extends BaseObservable implements ViewBinding
+
  */
 abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
@@ -97,7 +108,10 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
     open fun onNetworkStateChanged(netState: NetState) {}
 
     /**
-     * 创建viewModel
+     * 创建viewModel方式：todo 看源码
+     * (1)val viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+     *
+     * (2)val mainModel by viewModels<MainViewModel>()
      */
     private fun createViewModel(): VM {
         return ViewModelProvider(this).get(getVmClazz(this))

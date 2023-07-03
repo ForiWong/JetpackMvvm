@@ -9,7 +9,7 @@ import androidx.lifecycle.OnLifecycleEvent
 /**
  * 作者　: hegaojian
  * 时间　: 20120/1/7
- * 描述　:
+ * 描述　: 添加生命周期，在on_destroy中removeCallback
  */
 class KtxHandler(lifecycleOwner: LifecycleOwner, callback: Callback) : Handler(callback), LifecycleObserver {
 

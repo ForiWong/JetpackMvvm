@@ -15,10 +15,11 @@ import java.lang.reflect.ParameterizedType
  * 描述　:
  */
 
-//todo 通过泛型填充binding
+//val binding = ActivityMainBinding.inflate(layoutInflater)
 @JvmName("inflateWithGeneric")
 fun <VB : ViewBinding> AppCompatActivity.inflateBindingWithGeneric(layoutInflater: LayoutInflater): VB =
     withGenericBindingClass<VB>(this) { clazz ->
+        //反射调用静态方法
         clazz.getMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as VB
     }.also { binding ->
         if (binding is ViewDataBinding) {
