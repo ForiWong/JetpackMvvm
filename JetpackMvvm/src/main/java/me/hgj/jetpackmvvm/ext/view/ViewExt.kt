@@ -110,7 +110,7 @@ fun View.clickNoRepeat(interval: Long = 500, action: (view: View) -> Unit) {
     setOnClickListener {
         val currentTime = System.currentTimeMillis()
         if (lastClickTime != 0L && (currentTime - lastClickTime < interval)) {
-            "返回了".logd()
+            "重复点击，直接返回".logd()
             return@setOnClickListener
         }
         lastClickTime = currentTime

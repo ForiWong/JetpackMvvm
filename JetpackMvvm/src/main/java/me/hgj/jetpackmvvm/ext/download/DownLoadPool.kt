@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap
 
 object DownLoadPool {
 
-    //CoroutineScope todo
+    //CoroutineScope
     private val scopeMap: ConcurrentHashMap<String, CoroutineScope> = ConcurrentHashMap()
 
     //下载位置

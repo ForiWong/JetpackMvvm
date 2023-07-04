@@ -3,6 +3,7 @@ package me.hgj.jetpackmvvm.ext.download
 /**
  * @author : hgj
  * @date   : 2020/7/13
+ * todo sealed class
  */
 sealed class DownloadResultState {
 

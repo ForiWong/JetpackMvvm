@@ -6,7 +6,7 @@ import java.util.*
 /**
  * 作者　: hegaojian
  * 时间　: 2021/6/8
- * 描述　: todo 这个管理方式，有啥好处？？
+ * 描述　: todo 这个管理方式，有啥好处？？为什么不用Activity的启动模式
  */
 object KtxActivityManger {
     //activity集合

@@ -23,6 +23,7 @@ val Context.screenHeight
 
 /**
  * 判断是否为空 并传入相关操作
+ * 高阶函数 .invoke()
  */
 inline fun <reified T> T?.notNull(notNullAction: (T) -> Unit, nullAction: () -> Unit = {}) {
     if (this != null) {

@@ -49,6 +49,13 @@ object DownLoadManager {
             doDownLoad(tag, url, savePath, saveName, reDownload, loadListener, this)
         }
     }
+    /**
+     * withContext 是 Kotlin 中一个非常有用的挂起函数，用于在协程中切换上下文。通常，我们使用协程来执
+     * 行异步任务，例如网络请求或数据库查询，但是在执行异步任务时，我们可能需要更改协程的上下文，例如
+     * 从 I/O 线程池切换到主线程以更新 UI。
+     * 需要注意的是，withContext 并不会创建新的协程，它只是在当前协程中切换上下文。因此，当我们使用
+     * withContext 时，需要确保我们已经处于一个协程中，否则会抛出 IllegalStateException 异常。
+     * */
 
     /**
      * 取消下载

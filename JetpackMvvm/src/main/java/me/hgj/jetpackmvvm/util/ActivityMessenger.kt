@@ -26,7 +26,7 @@ import kotlin.reflect.KProperty
 /**
  * @author wuyr
  * @github https://github.com/wuyr/ActivityMessenger
- * @since 2019-08-05 上午11:56
+ * @since 2019-08-05 上午11:56 todo
  */
 object ActivityMessenger {
     private var sRequestCode = 0

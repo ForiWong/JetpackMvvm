@@ -8,7 +8,7 @@ import me.hgj.jetpackmvvm.callback.livedata.BooleanLiveData
 /**
  * 作者　: hegaojian
  * 时间　: 20120/1/7
- * 描述　:
+ * 描述　: 可以检测app在后台被用户杀死，或者被系统杀死吗
  */
 object KtxAppLifeObserver : LifecycleObserver {
 

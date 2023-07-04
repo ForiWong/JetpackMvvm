@@ -8,6 +8,7 @@ import me.hgj.jetpackmvvm.ext.util.jetpackMvvmLog
  * 作者　: hegaojian
  * 时间　: 2020/3/26
  * 描述　:
+ * todo 改成方便跟踪代码的log
  */
 object LogUtils {
     private const val DEFAULT_TAG = "JetpackMvvm"
