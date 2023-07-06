@@ -1,10 +1,12 @@
 package me.hgj.jetpackmvvm.demo.ui.fragment.me
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ToastUtils
 import kotlinx.android.synthetic.main.fragment_me.*
+import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.demo.R
 import me.hgj.jetpackmvvm.demo.app.appViewModel
 import me.hgj.jetpackmvvm.demo.app.base.BaseFragment
@@ -15,6 +17,7 @@ import me.hgj.jetpackmvvm.demo.app.ext.setUiTheme
 import me.hgj.jetpackmvvm.demo.data.model.bean.BannerResponse
 import me.hgj.jetpackmvvm.demo.data.model.bean.IntegralResponse
 import me.hgj.jetpackmvvm.demo.databinding.FragmentMeBinding
+import me.hgj.jetpackmvvm.demo.note.flow.FlowActivity
 import me.hgj.jetpackmvvm.demo.viewmodel.request.RequestMeViewModel
 import me.hgj.jetpackmvvm.demo.viewmodel.state.MeViewModel
 import me.hgj.jetpackmvvm.ext.nav
@@ -143,5 +146,11 @@ class MeFragment : BaseFragment<MeViewModel, FragmentMeBinding>() {
             nav().navigateAction(R.id.action_mainfragment_to_settingFragment)
         }
 
+        /** 测试*/
+        fun test() {
+            appContext.startActivity(Intent(appContext, FlowActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            })
+        }
     }
 }
