@@ -6,8 +6,8 @@
 
 fun main(args: Array<String>) {
 launch(CommonPool) {//协程体
-delay(1000L)
-println("World!")
+    delay(1000L)
+    println("World!")
 }
 println("Hello,")
 Thread.sleep(2000L)
@@ -27,6 +27,7 @@ A. 主流程:
 打印出"Hello,"
 主线程sleep两秒
 (这里的sleep只是保持进程存活, 目的是为了等待协程执行完)
+
 B. 协程流程:
 
 协程延时1秒

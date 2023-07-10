@@ -27,6 +27,9 @@ class MainActivity : BaseActivity1<MainViewModel, ActivityMainBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
         //进入首页检查更新
         Beta.checkUpgrade(false, true)
+        // OnBackPressedDispatcher: Dispatcher that can be used to register OnBackPressedCallback instances for
+        // handling the ComponentActivity.onBackPressed callback via composition.
+        // 以前Fragment、View里面没有返回事件，需要自己处理，目前官方提供了OnBackPressedDispatcher对事件进行拦截处理，这个类也主要是处理这个问题
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 val nav = Navigation.findNavController(this@MainActivity, R.id.host_fragment)
